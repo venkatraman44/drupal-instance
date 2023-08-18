@@ -1,0 +1,4 @@
+name: 'task1' #name of the module
+description: 'TASK 1' #description of the module
+type: module #type of the folder
+core_version_requirement: ^9 || ^10 #minimum version of the drupal instance

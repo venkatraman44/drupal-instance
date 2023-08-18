@@ -1,0 +1,7 @@
+thirteenth_form_with_checkbox.custom:
+  path: '/checkbox'
+  defaults:
+    _title: 'Custom'
+    _form: 'Drupal\thirteenth_form_with_checkbox\Form\CustomForm'
+  requirements:
+    _permission: 'access content'

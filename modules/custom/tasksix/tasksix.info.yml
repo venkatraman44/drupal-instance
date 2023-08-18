@@ -1,0 +1,5 @@
+name: 'tasksix'
+type: module
+description: 'task six'
+package: Custom
+core_version_requirement: ^10

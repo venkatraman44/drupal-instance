@@ -1,0 +1,54 @@
+<?php
+
+/**
+ * @file
+ * Description.
+ */
+
+/**
+ * Function.
+ */
+function assesmentone_schema() {
+  $schema['assessment_information'] = [
+    'description' => 'stores new form details',
+    'fields' => [
+      'id' => [
+        'description' => 'id number',
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'firstname' => [
+        'description' => 'firstname',
+        'type' => 'varchar',
+        'length' => 50,
+        'not null' => TRUE,
+      ],
+      'lastname' => [
+        'description' => 'lastname',
+        'type' => 'varchar',
+        'length' => 50,
+        'not null' => TRUE,
+      ],
+      'email' => [
+        'description' => 'email',
+        'type' => 'varchar',
+        'length' => 50,
+        'not null' => TRUE,
+      ],
+      'gender' => [
+        'description' => 'gender',
+        'type' => 'varchar',
+        'length' => 50,
+        'not null' => TRUE,
+      ],
+      'phone' => [
+        'description' => 'phone',
+        'type' => 'varchar',
+        'length' => 10,
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => ['id'],
+  ];
+  return $schema;
+}

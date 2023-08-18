@@ -1,0 +1,7 @@
+mai_cron.tokenform:
+  path: '/token-form'
+  defaults:
+    _form: '\Drupal\mail_cron\Form\TokenForm'
+    _title: 'Custom Configuration Form'
+  requirements:
+    _permission: 'access content'

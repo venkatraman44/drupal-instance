@@ -1,0 +1,7 @@
+task4.nodeform:
+  path: '/node-form'
+  defaults:
+    _form: '\Drupal\task4\Form\NodeForm'
+    _title: 'Custom Configuration Form'
+  requirements:
+    _permission: 'access content'

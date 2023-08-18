@@ -1,0 +1,5 @@
+name: 'Assesmentone'
+type: module
+description: 'description.'
+package: 'custom'
+core_version_requirement: ^10

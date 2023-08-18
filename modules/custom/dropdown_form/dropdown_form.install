@@ -1,0 +1,218 @@
+<?php
+
+/**
+ * @file
+ * Some comment.
+ */
+
+/**
+ * @file
+ * Install, update and uninstall functions for the dropdown_form module.
+ */
+
+/**
+ * Implements hook_update().
+ */
+function dropdown_form_update_100504() {
+  $database = \Drupal::database();
+  $schema = $database->schema();
+  $electronic_items = 'electronic_items';
+  $electronic_items_schema = [
+
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'size' => 'big',
+        'not null' => TRUE,
+      ],
+      'name' => [
+        'type' => 'varchar',
+        'not null' => TRUE,
+        'length' => 100,
+      ],
+    ],
+    'primary key' => ['id'],
+  ];
+  $schema->createTable($electronic_items, $electronic_items_schema);
+  $elec_items = [
+      ['name' => 'LAPTOPS'],
+      ['name' => 'MOBILE'],
+      ['name' => 'TABS'],
+  ];
+  foreach ($elec_items as $elec_item) {
+    $database->insert($electronic_items)
+      ->fields(['name' => $elec_item['name']])
+      ->execute();
+  }
+  $model_name = 'models';
+  $model_name_schema = [
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'size' => 'big',
+        'not null' => TRUE,
+      ],
+      'electronic_items_id' => [
+        'type' => 'int',
+        'not null' => TRUE,
+      ],
+      'name' => [
+        'type' => 'varchar',
+        'not null' => TRUE,
+        'length' => 100,
+      ],
+    ],
+    'primary key' => ['id'],
+    'foreign keys' => [
+      'electronic_items_id' => [
+        'table' => 'electronic_items',
+        'column' => 'id',
+      ],
+    ],
+  ];
+  $schema->createTable($model_name, $model_name_schema);
+  $model_names = [
+      ['electronic_items_id' => 1, 'name' => 'Apple MacBook Pro'],
+      ['electronic_items_id' => 1, 'name' => 'Dell XPS 13'],
+      ['electronic_items_id' => 1, 'name' => 'HP Spectre x360'],
+      ['electronic_items_id' => 1, 'name' => 'Razer Blade 15'],
+      ['electronic_items_id' => 1, 'name' => 'Lenovo ThinkPad X1 Carbon'],
+      ['electronic_items_id' => 1, 'name' => 'Asus ROG Zephyrus G14'],
+      ['electronic_items_id' => 1, 'name' => 'Acer Predator Helios 300'],
+      ['electronic_items_id' => 1, 'name' => 'Microsoft Surface Laptop 4'],
+      ['electronic_items_id' => 2, 'name' => 'Apple iPhone 13'],
+      ['electronic_items_id' => 2, 'name' => 'Samsung Galaxy S21'],
+      ['electronic_items_id' => 2, 'name' => 'Google Pixel 6'],
+      ['electronic_items_id' => 2, 'name' => 'Xiaomi Mi 11'],
+      ['electronic_items_id' => 2, 'name' => 'OnePlus 9 Pro'],
+      ['electronic_items_id' => 2, 'name' => 'Sony Xperia 1 III'],
+      ['electronic_items_id' => 2, 'name' => 'Oppo Find X3 Pro'],
+      ['electronic_items_id' => 2, 'name' => 'Nokia 8.3 5G'],
+      ['electronic_items_id' => 3, 'name' => 'Apple iPad Pro'],
+      ['electronic_items_id' => 3, 'name' => 'Samsung Galaxy Tab S7'],
+      ['electronic_items_id' => 3, 'name' => 'Microsoft Surface Pro 7'],
+      ['electronic_items_id' => 3, 'name' => 'Amazon Fire HD 10'],
+      ['electronic_items_id' => 3, 'name' => 'Lenovo Tab P11 Pro'],
+      ['electronic_items_id' => 3, 'name' => 'Huawei MatePad Pro'],
+      ['electronic_items_id' => 3, 'name' => 'Google Pixel Slate'],
+      ['electronic_items_id' => 3, 'name' => 'Asus ZenPad 3S 10'],
+  ];
+  foreach ($model_names as $model) {
+    $database->insert($model_name)
+      ->fields([
+        'electronic_items_id' => $model['electronic_items_id'],
+        'name' => $model['name'],
+      ])
+      ->execute();
+  }
+  $colors = 'color';
+  $colors_table_schema = [
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'size' => 'big',
+        'not null' => TRUE,
+      ],
+      'models_id' => [
+        'type' => 'int',
+        'not null' => TRUE,
+      ],
+      'name' => [
+        'type' => 'varchar',
+        'not null' => TRUE,
+        'length' => 100,
+      ],
+    ],
+    'primary key' => ['id'],
+    'foreign keys' => [
+      'models_id' => [
+        'table' => 'models',
+        'column' => 'id',
+      ],
+    ],
+  ];
+  $schema->createTable($colors, $colors_table_schema);
+  $color_name = [
+      ['models_id' => 1, 'name' => 'RED'],
+      ['models_id' => 1, 'name' => 'BLUE'],
+      ['models_id' => 1, 'name' => 'BLACK'],
+      ['models_id' => 2, 'name' => 'RED'],
+      ['models_id' => 2, 'name' => 'BLUE'],
+      ['models_id' => 2, 'name' => 'BLACK'],
+      ['models_id' => 3, 'name' => 'RED'],
+      ['models_id' => 3, 'name' => 'BLUE'],
+      ['models_id' => 3, 'name' => 'BLACK'],
+      ['models_id' => 4, 'name' => 'RED'],
+      ['models_id' => 4, 'name' => 'BLUE'],
+      ['models_id' => 4, 'name' => 'BLACK'],
+      ['models_id' => 5, 'name' => 'RED'],
+      ['models_id' => 5, 'name' => 'BLUE'],
+      ['models_id' => 5, 'name' => 'BLACK'],
+      ['models_id' => 6, 'name' => 'RED'],
+      ['models_id' => 6, 'name' => 'BLUE'],
+      ['models_id' => 6, 'name' => 'BLACK'],
+      ['models_id' => 7, 'name' => 'RED'],
+      ['models_id' => 7, 'name' => 'BLUE'],
+      ['models_id' => 7, 'name' => 'BLACK'],
+      ['models_id' => 8, 'name' => 'RED'],
+      ['models_id' => 8, 'name' => 'BLUE'],
+      ['models_id' => 8, 'name' => 'BLACK'],
+      ['models_id' => 9, 'name' => 'RED'],
+      ['models_id' => 9, 'name' => 'BLUE'],
+      ['models_id' => 9, 'name' => 'BLACK'],
+      ['models_id' => 10, 'name' => 'RED'],
+      ['models_id' => 10, 'name' => 'BLUE'],
+      ['models_id' => 10, 'name' => 'BLACK'],
+      ['models_id' => 11, 'name' => 'RED'],
+      ['models_id' => 11, 'name' => 'BLUE'],
+      ['models_id' => 11, 'name' => 'BLACK'],
+      ['models_id' => 12, 'name' => 'RED'],
+      ['models_id' => 12, 'name' => 'BLUE'],
+      ['models_id' => 12, 'name' => 'BLACK'],
+      ['models_id' => 13, 'name' => 'RED'],
+      ['models_id' => 13, 'name' => 'BLUE'],
+      ['models_id' => 13, 'name' => 'BLACK'],
+      ['models_id' => 14, 'name' => 'RED'],
+      ['models_id' => 14, 'name' => 'BLUE'],
+      ['models_id' => 14, 'name' => 'BLACK'],
+      ['models_id' => 15, 'name' => 'RED'],
+      ['models_id' => 15, 'name' => 'BLUE'],
+      ['models_id' => 15, 'name' => 'BLACK'],
+      ['models_id' => 16, 'name' => 'RED'],
+      ['models_id' => 16, 'name' => 'BLUE'],
+      ['models_id' => 16, 'name' => 'BLACK'],
+      ['models_id' => 17, 'name' => 'RED'],
+      ['models_id' => 17, 'name' => 'BLUE'],
+      ['models_id' => 17, 'name' => 'BLACK'],
+      ['models_id' => 18, 'name' => 'RED'],
+      ['models_id' => 18, 'name' => 'BLUE'],
+      ['models_id' => 18, 'name' => 'BLACK'],
+      ['models_id' => 19, 'name' => 'RED'],
+      ['models_id' => 19, 'name' => 'BLUE'],
+      ['models_id' => 19, 'name' => 'BLACK'],
+      ['models_id' => 20, 'name' => 'RED'],
+      ['models_id' => 21, 'name' => 'BLUE'],
+      ['models_id' => 21, 'name' => 'BLACK'],
+      ['models_id' => 21, 'name' => 'RED'],
+      ['models_id' => 22, 'name' => 'BLUE'],
+      ['models_id' => 22, 'name' => 'BLACK'],
+      ['models_id' => 22, 'name' => 'RED'],
+      ['models_id' => 23, 'name' => 'BLUE'],
+      ['models_id' => 23, 'name' => 'BLACK'],
+      ['models_id' => 23, 'name' => 'RED'],
+      ['models_id' => 24, 'name' => 'BLUE'],
+      ['models_id' => 24, 'name' => 'BLACK'],
+      ['models_id' => 24, 'name' => 'RED'],
+      ['models_id' => 20, 'name' => 'BLUE'],
+      ['models_id' => 20, 'name' => 'BLACK'],
+
+  ];
+  foreach ($color_name as $color) {
+    $database->insert($colors)
+      ->fields([
+        'models_id' => $color['models_id'],
+        'name' => $color['name'],
+      ])
+      ->execute();
+  }
+}

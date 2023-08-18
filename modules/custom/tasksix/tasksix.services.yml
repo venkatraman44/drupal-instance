@@ -1,0 +1,5 @@
+services:
+  events_subscriber: #creating a eventsubscriber
+    class: '\Drupal\tasksix\EventSubscriber\HeaderRemover' #where the file is present
+    tags:
+      - { name: 'event_subscriber' } # to use event subscriber

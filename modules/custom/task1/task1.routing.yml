@@ -1,0 +1,15 @@
+task1.new_task: #route name for controller
+  path: '/task1' #path
+  defaults:
+    _controller: '\Drupal\task1\Controller\CustomController::task1' #class and function
+    _title: 'Task 1' #title
+  requirements:
+    _permission: 'access content' #defining permissions needed
+
+task1.new_task3: #route name for controller
+  path: '/task3' #path
+  defaults:
+    _controller: '\Drupal\task1\Controller\CustomControllerThree::task3' #class and function
+    _title: 'Task 3' #title
+  requirements:
+    _permission: 'access content' #defining permissions needed

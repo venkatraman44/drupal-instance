@@ -1,0 +1,7 @@
+dropdown_form.elec_form:
+  path: '/dropdown'
+  defaults:
+    _title: 'dropdown form'
+    _form: 'Drupal\dropdown_form\Form\DropdownForm'
+  requirements:
+    _permission: 'access content'

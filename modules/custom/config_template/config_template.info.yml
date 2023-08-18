@@ -1,0 +1,4 @@
+name: 'config_template'
+type: module
+description: 'template task'
+core_version_requirement: ^10

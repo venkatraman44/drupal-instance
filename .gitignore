@@ -1,0 +1,17 @@
+# Ignore /sites/default/files directory
+/sites/default
+
+# Ignore /modules/contrib directory
+/modules/contrib
+
+# Ignore /themes/contrib directory
+/themes/contrib
+
+# Ignore /profiles/contrib directory
+/profiles/contrib
+
+# Ignore the vendor directory
+vendor
+/example.gitignore
+
+core

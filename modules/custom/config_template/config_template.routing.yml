@@ -1,0 +1,15 @@
+config_template.settings:
+  path: '/tempform'
+  defaults:
+    _title: 'Settings'
+    _form: 'Drupal\config_template\Form\SettingsForm'
+  requirements:
+    _permission: 'access content'
+
+config_template.twig_controller:
+  path: '/twig'
+  defaults:
+    _controller: '\Drupal\config_template\Controller\TwigController::twig'
+    _title: 'twig controller'
+  requirements:
+    _permission: 'access content'

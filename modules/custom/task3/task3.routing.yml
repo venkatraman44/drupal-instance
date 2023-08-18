@@ -1,0 +1,19 @@
+task3.controllertask:
+  path: 'node/{node}/details'
+  defaults:
+    _controller: '\Drupal\task3\Controller\ControllerTask::newTask'
+  options:
+    _admin_route: true
+    parameters:
+      node:
+        type: entity:node
+  requirements:
+    _permission: 'controller task'
+
+task3.custom_form:
+  path: "/taskform"
+  defaults:
+    _form: '\Drupal\task3\Form\CustomForm'
+    _title: "Custom Form to get user details"
+  requirements:
+    _permission: 'access content'

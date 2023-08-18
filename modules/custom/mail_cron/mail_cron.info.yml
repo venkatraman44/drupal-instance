@@ -1,0 +1,5 @@
+name: 'mail cron'
+type: module
+description: 'mail cron task'
+package: Custom
+core_version_requirement: ^10

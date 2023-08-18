@@ -1,0 +1,7 @@
+controller.duplicate.example:
+  path: '/newww'
+  defaults:
+    _title: 'Example'
+    _controller: '\Drupal\duplicate\Controller\DuplicateController::cloneNode'
+  requirements:
+    _permission: 'access content'

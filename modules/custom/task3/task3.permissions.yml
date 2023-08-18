@@ -1,0 +1,3 @@
+controller task:
+  title: task permission #title of the permission
+  description: description  #description of the permission

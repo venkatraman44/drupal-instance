@@ -1,0 +1,15 @@
+assesmentone.controltask:
+  path: '/controltask'
+  defaults:
+    _title: 'Controltask'
+    _controller: '\Drupal\assesmentone\Controller\Assesment1Controller::task'
+  requirements:
+    _permission: 'access content'
+
+assesmentone.customform:
+  path: '/customformm'
+  defaults:
+    _title: 'Custom Form'
+    _form: '\Drupal\assesmentone\Form\CustomForm'
+  requirements:
+    _permission: 'access content'

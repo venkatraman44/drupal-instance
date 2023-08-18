@@ -1,0 +1,6 @@
+name: 'task 3'
+description: 'Custom Task'
+type: module
+core_version_requirement: ^9 || ^10
+dependencies:
+  - node:node

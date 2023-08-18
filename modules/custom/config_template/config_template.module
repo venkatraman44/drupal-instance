@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ * Some comment.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function config_template_theme($existing, $type, $theme, $path) {
+  return [
+    'new_template' => [
+      'variables' => [
+        'title' => '',
+        'paragraph' => '',
+        'color_code' => '',
+      ],
+    ],
+  ];
+}

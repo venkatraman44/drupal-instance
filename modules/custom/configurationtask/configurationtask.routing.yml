@@ -1,0 +1,7 @@
+configurationtask.confi_form:
+  path: '/config-taskk'
+  defaults:
+    _title: 'config form'
+    _form: 'Drupal\configurationtask\Form\ConfiForm'
+  requirements:
+    _permission: 'access content'

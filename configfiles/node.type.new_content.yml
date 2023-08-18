@@ -1,0 +1,18 @@
+uuid: 80d658a8-84ff-4842-8d9b-126ab46f5d52
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'new content'
+type: new_content
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

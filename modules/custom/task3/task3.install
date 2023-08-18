@@ -1,0 +1,39 @@
+<?php
+
+/**
+ * @file
+ * Some.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function task3_schema() {
+  $schema = [];
+
+  $schema['user_information'] = [
+    'description' => 'Table to store user information from the custom form.',
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'description' => 'Primary Key: Unique ID for the record.',
+      ],
+      'title' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'description' => 'The title field from the custom form.',
+      ],
+      'user_id' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'description' => 'The user entity reference ID.',
+      ],
+    ],
+    'primary key' => ['id'],
+  ];
+
+  return $schema;
+}
