@@ -1,0 +1,31 @@
+uuid: 6413cbc3-3ae2-4ebf-a6ba-9d07aa03d318
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_para
+    - node.type.page
+    - paragraphs.paragraphs_type.kilua
+  module:
+    - entity_reference_revisions
+id: node.page.field_para
+field_name: field_para
+entity_type: node
+bundle: page
+label: para
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      kilua: kilua
+    negate: 0
+    target_bundles_drag_drop:
+      kilua:
+        weight: 2
+        enabled: true
+field_type: entity_reference_revisions

@@ -1,0 +1,15 @@
+uuid: 2c75019f-a769-4b6b-a17c-2a218ea7ed06
+langcode: en
+status: true
+dependencies: {  }
+name: new_style
+label: 'new style'
+effects:
+  ae558069-7651-429f-8360-6d40c31629e2:
+    uuid: ae558069-7651-429f-8360-6d40c31629e2
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 300
+      height: 300
+      anchor: center-center

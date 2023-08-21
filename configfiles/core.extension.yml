@@ -16,12 +16,16 @@ module:
   contextual: 0
   datetime: 0
   dblog: 0
+  devel_generate: 0
+  duplicate: 0
   dynamic_page_cache: 0
   editor: 0
+  entity_reference_revisions: 0
   field: 0
   field_ui: 0
   file: 0
   filter: 0
+  fourteen_view_field: 0
   help: 0
   history: 0
   image: 0
@@ -32,19 +36,24 @@ module:
   node: 0
   options: 0
   page_cache: 0
+  paragraphs_type_permissions: 0
   path: 0
   path_alias: 0
+  quick_node_clone: 0
   search: 0
   shortcut: 0
   system: 0
   taxonomy: 0
   text: 0
+  thirteenth_form_with_checkbox: 0
+  token: 0
   toolbar: 0
   tour: 0
   update: 0
   user: 0
   views_ui: 0
   views: 10
+  paragraphs: 11
   standard: 1000
 theme:
   olivero: 0

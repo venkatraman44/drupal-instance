@@ -1,0 +1,25 @@
+uuid: 9d8f3bca-aead-48c2-b35b-23c10609a992
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.kilua.field_body
+    - paragraphs.paragraphs_type.kilua
+  module:
+    - text
+id: paragraph.kilua.default
+targetEntityType: paragraph
+bundle: kilua
+mode: default
+content:
+  field_body:
+    type: text_textarea
+    weight: 0
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

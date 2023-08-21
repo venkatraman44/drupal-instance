@@ -8,7 +8,7 @@ dependencies:
     - field.field.node.article.comment
     - field.field.node.article.field_image
     - field.field.node.article.field_tags
-    - image.style.wide
+    - image.style.new_style
     - node.type.article
   module:
     - comment
@@ -42,8 +42,8 @@ content:
     type: image
     label: hidden
     settings:
-      image_style: wide
       image_link: ''
+      image_style: new_style
       image_loading:
         attribute: lazy
     third_party_settings: {  }

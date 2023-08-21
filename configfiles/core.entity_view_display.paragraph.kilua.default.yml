@@ -1,0 +1,22 @@
+uuid: e370812e-b37e-4ae8-8b35-77c993435241
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.kilua.field_body
+    - paragraphs.paragraphs_type.kilua
+  module:
+    - text
+id: paragraph.kilua.default
+targetEntityType: paragraph
+bundle: kilua
+mode: default
+content:
+  field_body:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }
