@@ -3,8 +3,8 @@ langcode: en
 status: true
 dependencies:
   module:
+    - fourteen_view_field
     - node
-    - quick_node_clone
     - user
 id: new_view
 label: 'new view'
@@ -69,16 +69,16 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        clone_link:
-          id: clone_link
+        node_link:
+          id: node_link
           table: node
-          field: clone_link
+          field: node_link
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: node
-          plugin_id: quick_node_clone_link
-          label: 'Add clone link'
+          plugin_id: fourteen_view_field_example
+          label: 'Add node link'
           exclude: false
           alter:
             alter_text: false
@@ -119,7 +119,7 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          text: Clone
+          text: Node
       pager:
         type: mini
         options:
